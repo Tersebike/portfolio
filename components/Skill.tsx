@@ -11,15 +11,13 @@ function Skill({ directionLeft, url }: Props) {
     <div className='group relative flex cursor-pointer'>
       <motion.img
         initial={{
-          x: directionLeft ? -200 : 200,
           opacity: 0,
         }}
         transition={{
-          duration: 0.5,
+          duration: 1.2,
         }}
         whileInView={{
           opacity: 1,
-          x: 0,
         }}
         src={`${url}`}
         alt=''

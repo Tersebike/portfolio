@@ -25,12 +25,12 @@ export default function Header({}: Props) {
       className='flex flex-row items-center'>
         {/* Social Icons */}
         <SocialIcon
-          url='https://www.instagram.com/t1m_williams/'
+          url='https://www.linkedin.com/in/tim-d-williams/'
           fgColor='gray'
           bgColor='transparent'
         />
         <SocialIcon
-          url='https://www.instagram.com/t1m_williams/'
+          url='https://github.com/Tersebike/'
           fgColor='gray'
           bgColor='transparent'
         />

@@ -46,9 +46,9 @@ function Projects({}: Props) {
             <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
               <h4 className='text-4xl font-semibold text-center'>
                 <span className='underline decoration=[#F7AB0A]/50'>
-                  Case Study {i + 1} of {projects.length}:
+                  Project {i + 1} of {projects.length}:
                 </span>{' '}
-                UPS Clone
+                Project name
               </h4>
               <p>
                 Filler text that again will just be latin filler text once I have time I am putting in a tech debt for now, but I will come back to this.
