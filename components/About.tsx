@@ -25,7 +25,7 @@ function About({}: Props) {
         }}
         src="https://media.licdn.com/dms/image/C4D03AQEp_4CsHGLEmg/profile-displayphoto-shrink_800_800/0/1552595666470?e=1678924800&v=beta&t=c8w_laBdlhi5hmJQFxRT5GgzEThG1mvdskfMKSOM5ZI"
         alt=''
-        className='-mb-20 md:mb-0 flex-shrink-0 w-36 h-36 rounded-full object-cover md:rounded-lg md:w-[300px] md:h-[300px] xl:w-[400px] xl:h-[400px] mt-[75px]'
+        className='-mb-20 md:mb-0 flex-shrink-0 w-32 h-32 rounded-full object-cover md:rounded-lg md:w-[300px] md:h-[300px] xl:w-[400px] xl:h-[400px] mt-[75px]'
       />
       <motion.div
         initial={{
