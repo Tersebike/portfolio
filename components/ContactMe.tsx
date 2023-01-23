@@ -2,7 +2,6 @@ import React from 'react';
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import { useForm, SubmitHandler } from "react-hook-form";
 
-
 type Inputs = {
   name: string,
   email: string,
@@ -39,7 +38,7 @@ function ContactMe({}: Props) {
 
           <div className='flex items-center space-x-4 justify-center'>
             <MapPinIcon className='text-[#F7AB0A] h-5 w-5 animate-pulse' />
-            <p className='text-lg'>123 developer lane</p>
+            <p className='text-lg'>Dallas TX</p>
           </div>
         </div>
 
