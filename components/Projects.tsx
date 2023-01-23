@@ -23,7 +23,7 @@ function Projects({}: Props) {
             transition={{
               duration: 1.5,
             }}
-            className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'>
+            className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 pt-20 md:pt-30 md:p-20 h-screen'>
             <motion.img
               initial={{
                 y: -300,
@@ -41,10 +41,11 @@ function Projects({}: Props) {
               }}
               src='https://media.glassdoor.com/sqll/4747101/sanity-ca-squareLogo-1640192856530.png'
               alt=''
+              className='h-36 w-36'
             />
 
             <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
-              <h4 className='text-4xl font-semibold text-center'>
+              <h4 className='text-2xl md:text-4xl font-semibold text-center'>
                 <span className='underline decoration=[#F7AB0A]/50'>
                   Project {i + 1} of {projects.length}:
                 </span>{' '}
