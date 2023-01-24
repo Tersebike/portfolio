@@ -18,9 +18,9 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track--gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
-      <Head>
-        <title>Timothys portfolio</title>
-      </Head>
+    <Head>
+      <title>Timothys portfolio</title>
+    </Head>
 
     <Header />
 
@@ -55,13 +55,13 @@ export default function Home() {
     </section>
 
     <Link href='#hero'>
-    <footer className='sticky bottom-5 w-fill cursor-pointer'>
-      <div className='flex items-end justify-end pr-[2.5%]'>
-        <ArrowUpIcon
-          className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
-        />
-      </div>
-    </footer>
+      <footer className='sticky bottom-5 w-fill cursor-pointer'>
+        <div className='flex items-end justify-end pr-[2.5%]'>
+            <ArrowUpIcon
+              className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
+            />
+        </div>
+      </footer>
     </Link>
 
     </div>
