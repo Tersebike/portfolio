@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
@@ -12,21 +12,33 @@ import Projects from '../components/Projects'
 import ContactMe from '../components/ContactMe'
 import Link from 'next/link'
 import { ArrowUpIcon } from '@heroicons/react/24/solid';
+import { PageInfo, Project, Social, Skill } from '../typings'
+import { fetchPageInfo } from '../utils/fetchPageInfo'
+import { fetchSkills } from '../utils/fetchSkills'
+import { fetchProjects } from '../utils/fetchProjects'
+import { fetchSocial } from '../utils/fetchSocials'
+
+type Props = {
+  pageInfo: PageInfo;
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[]
+}
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({ pageInfo, skills, projects, socials}: Props) {
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track--gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
     <Head>
       <title>Timothys portfolio</title>
     </Head>
 
-    <Header />
+    <Header socials={socials} />
 
     {/* Hero */}
     <section id='hero' className='snap-center'>
-    <Hero />
+    <Hero pageInfo={pageInfo} />
     </section>
 
     {/* About */}
@@ -66,4 +78,21 @@ export default function Home() {
 
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const skills: Skill[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const socials: Social[] = await fetchSocial();
+
+  return {
+    props: {
+      pageInfo,
+      skills,
+      projects,
+      socials,
+    },
+    revalidate: 3600,
+  }
 }

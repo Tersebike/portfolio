@@ -3,29 +3,33 @@ import React from 'react'
 import Link from 'next/link'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCirles'
+import { PageInfo } from '../typings'
+import { urlFor } from '../sanity'
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+};
 
-function Hero({}: Props) {
+function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
-            "Hi, My Name's Timothy Williams",
+            `Hi, My Name's ${pageInfo?.name}`,
             "Guy-who-loves-coffee.tsx",
             "<ButLovesToCodeMore />",
           ],
     loop: true,
     delaySpeed: 2000,
-  })
+  });
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden pt-[100px]'>
       <BackgroundCircles />
       <img
-      className='relative rounded-full h-32 w-32 mx-auto object-cover'
-      src='https://media.licdn.com/dms/image/C4D03AQEp_4CsHGLEmg/profile-displayphoto-shrink_800_800/0/1552595666470?e=1678924800&v=beta&t=c8w_laBdlhi5hmJQFxRT5GgzEThG1mvdskfMKSOM5ZI'
+      className='relative rounded-full h-36 w-36 mx-auto object-cover'
+      src={urlFor(pageInfo?.heroImage).url()}
       alt=''
       />
       <div className='z-20'>
-        <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Software Engineer</h2>
+        <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo?.role}</h2>
         <h1 className='text-5xl lg:6xl font-semibold px-10'>
           <span className='mr-3'>{text}</span>
           <Cursor cursorColor='#F7AB0A'/>
