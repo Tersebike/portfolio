@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { PageInfo } from '../typings'
+import { urlFor } from '../sanity'
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 
-function About({}: Props) {
+function About({pageInfo}: Props) {
   return (
     <div className='flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
 
@@ -23,7 +27,7 @@ function About({}: Props) {
         transition={{
           duration: 1.2,
         }}
-        src="https://media.licdn.com/dms/image/C4D03AQEp_4CsHGLEmg/profile-displayphoto-shrink_800_800/0/1552595666470?e=1678924800&v=beta&t=c8w_laBdlhi5hmJQFxRT5GgzEThG1mvdskfMKSOM5ZI"
+        src={urlFor(pageInfo?.profilePic).url()}
         alt=''
         className='-mb-28 md:mb-0 flex-shrink-0 w-32 h-32 rounded-full object-cover md:rounded-xl md:w-[300px] md:h-[300px] xl:w-[400px] xl:h-[400px] mt-[75px]'
       />
@@ -42,7 +46,9 @@ function About({}: Props) {
 
         <h4 className='text-3xl md:text-4xl font-semibold'>Here is a <span className='underline decoration-[#F7AB0A]/50'>little</span> background</h4>
 
-        <p className='text-base'>Lots and lots of information about me will go here once I actually and properly set up the website. Until then, I will probably just fill whatever space more that I need with latin filler words.</p>
+        <p className='text-base'>
+          {pageInfo?.backgroundInformation}
+        </p>
 
       </motion.div>
 
