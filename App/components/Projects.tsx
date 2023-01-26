@@ -18,7 +18,7 @@ function Projects({projects}: Props) {
     <div className='h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
       <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>Projects</h3>
 
-      <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track--gray-400/20 scrollbar-thumb-[#F7AB0A]/80 mt-10'>
+      <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track--gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
         {projects.map((project, i) => (
           <motion.div
             key={project?._id}
@@ -49,7 +49,7 @@ function Projects({projects}: Props) {
               }}
               src={urlFor(project?.image).url()}
               alt=''
-              className='h-36 w-36'
+              className='h-36 w-36 mt-10'
             />
 
             <div className='space-y-5 px-0 md:px-10 max-w-6xl justify-evenly items-center'>
@@ -70,7 +70,7 @@ function Projects({projects}: Props) {
                     key={project?._id}
                     src={urlFor(technology.image).url()}
                     alt=''
-                    className='h-8 w-8 m-1 md:m-2'
+                    className='h-8 w-8 m-1 md:m-2 object-contain'
                   />
                 })}
               </div>
