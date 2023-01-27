@@ -14,12 +14,23 @@ type align = {
 }
 
 function Projects({projects}: Props) {
+  projects.sort((a, b) => {
+    if (a.title === 'Atelier') {
+      return -1;
+    } else if (b.title === 'Atelier') {
+      return 1;
+    } else {
+      return 0
+    }
+  })
+
   return (
     <div className='h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
       <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>Projects</h3>
 
       <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track--gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
-        {projects.map((project, i) => (
+        {projects.map((project, i) => {
+          return (
           <motion.div
             key={project?._id}
             initial={{
@@ -49,7 +60,7 @@ function Projects({projects}: Props) {
               }}
               src={urlFor(project?.image).url()}
               alt=''
-              className='h-36 w-36 mt-10'
+              className='h-36 mt-10'
             />
 
             <div className='space-y-5 px-0 md:px-10 max-w-6xl justify-evenly items-center'>
@@ -67,7 +78,7 @@ function Projects({projects}: Props) {
                 <div className='grid grid-cols-5 md:flex md:flex-row items-center justify-center mx-auto'>
                 {project?.technologies.map((technology) => {
                   return <img
-                    key={project?._id}
+                    key={technology._id}
                     src={urlFor(technology.image).url()}
                     alt=''
                     className='h-8 w-8 m-1 md:m-2 object-contain'
@@ -76,7 +87,7 @@ function Projects({projects}: Props) {
               </div>
               </div>
           </motion.div>
-        ))}
+        )})}
       </div>
 
       <div className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[350px] -skew-y-12' />

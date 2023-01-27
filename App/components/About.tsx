@@ -29,7 +29,7 @@ function About({pageInfo}: Props) {
         }}
         src={urlFor(pageInfo?.profilePic).url()}
         alt=''
-        className='-mb-28 md:mb-0 flex-shrink-0 w-32 h-32 rounded-full object-cover md:rounded-xl md:w-[300px] md:h-[300px] xl:w-[400px] xl:h-[400px] mt-[75px]'
+        className='-mb-28 md:mb-0 flex-shrink-0 h-44 object-cover rounded-xl md:h-2/3 mt-[75px]'
       />
       <motion.div
         initial={{
