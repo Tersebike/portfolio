@@ -25,7 +25,7 @@ function ContactMe({}: Props) {
           <span className='decoration-[#F7AB0A]/50 underline'>Lets Talk.</span>
         </h4>
 
-        <div className='space-y-4'>
+        <div className='space-y-1 md:space-y-4'>
           <div className='flex items-center space-x-4 justify-center'>
             <PhoneIcon className='text-[#F7AB0A] h-5 w-5 animate-pulse' />
             <p className='text-lg'>602-743-2733</p>
@@ -44,14 +44,14 @@ function ContactMe({}: Props) {
 
         <form onSubmit={handleSubmit(onSubmit)}className='flex flex-col space-y-2 w-fit mx-auto'>
           <div className='flex space-x-2'>
-            <input {...register('name')} placeholder='Name' type='text' className='contactInput w-40 md:w-52' />
-            <input {...register('email')} placeholder='Email' type='email' className='contactInput w-40 md:w-52' />
+            <input {...register('name')} placeholder='Name' type='text' className='contactInput w-36 h-10 md:h-18 md:w-52' />
+            <input {...register('email')} placeholder='Email' type='email' className='contactInput w-36 h-10 md:h-18 md:w-52' />
           </div>
 
-          <input {...register('subject')} placeholder='Subject' type='text' className='contactInput' />
+          <input {...register('subject')} placeholder='Subject' type='text' className='contactInput h-10 md:h-18' />
 
-          <textarea {...register('message')} placeholder='Message' className='contactInput' />
-          <button type='submit' className='bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg'>Submit</button>
+          <textarea {...register('message')} placeholder='Message' className='contactInput h-14 md:h-20' />
+          <button type='submit' className='bg-[#F7AB0A] py-auto h-8 md:h-14 px-10 rounded-md text-black font-bold text-lg'>Submit</button>
         </form>
       </div>
     </div>

@@ -24,24 +24,13 @@ function Skills({skills}: Props) {
 
       <h3 className='absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm'>Hover over a skill for current proficiency</h3>
 
-      <div className='grid grid-cols-4 gap-5 pt-[150px] md:grid-cols-5'>
+      <div className='grid grid-cols-4 gap-5 pt-[100px] md:pt-[150px] md:grid-cols-5'>
         {skills.map((skill) => {
           return <Skill
             key={skill._id}
             skill={skill}
           />
         })}
-        {/* <Skill url='https://adus.tech/wp-content/uploads/2021/05/html5-logo.png'/>
-        <Skill url='https://www.shareicon.net/download/2016/08/01/639873_internet.svg'/>
-        <Skill url='https://icon-library.com/images/javascript-icon-png/javascript-icon-png-23.jpg'/>
-        <Skill url='https://images.squarespace-cdn.com/content/v1/58d20c79725e25b221549193/1523028284340-2FY0DO8X58JYL5Z2NF2I/512px-React-icon.svg.png'/>
-        <Skill url='https://www.svgrepo.com/download/376337/node-js.svg'/>
-        <Skill url='https://www.logo.wine/a/logo/MySQL/MySQL-Logo.wine.svg'/>
-        <Skill url='https://www.vectorlogo.zone/logos/mongodb/mongodb-ar21.png'/>
-        <Skill url='https://e7.pngegg.com/pngimages/707/928/png-clipart-postgresql-logo-database-management-system-graphics-sql-logo-blue-text-thumbnail.png'/>
-        <Skill url='https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png'/>
-        <Skill url='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/2560px-AWS_Simple_Icons_AWS_Cloud.svg.png'/>
-        <Skill url='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'/> */}
       </div>
     </motion.div>
   )

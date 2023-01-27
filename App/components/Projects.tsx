@@ -26,7 +26,7 @@ function Projects({projects}: Props) {
   })
 
   return (
-    <div className='h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
+    <div className='h-screen relative flex flex-col md:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
       <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>Projects</h3>
 
       <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track--gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
@@ -43,7 +43,7 @@ function Projects({projects}: Props) {
             transition={{
               duration: 1.5,
             }}
-            className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 pt-25 md:p-20 md:pt-45 h-screen'>
+            className='w-screen flex-shrink-0 snap-center flex flex-col space-y-2 items-center justify-center p-10 md:p-20 md:pt-45 h-screen'>
               <Link href={project.linkToBuild}>
               <motion.img
                 initial={{
@@ -62,13 +62,13 @@ function Projects({projects}: Props) {
                 }}
                 src={urlFor(project?.image).url()}
                 alt=''
-                className='h-36 mt-10'
+                className='h-28 mt-20'
               />
               </Link>
 
-            <div className='space-y-5 px-0 md:px-10 max-w-6xl justify-evenly items-center'>
+            <div className='space-y-3 px-0 md:px-10 max-w-6xl justify-evenly items-center'>
               <Link href={project?.linkToBuild}>
-              <h4 className='text-2xl md:text-4xl font-semibold text-center hover:text-[#F7AB0A]/80 w-fit mx-auto'>
+              <h4 className='text-xl md:text-4xl font-semibold text-center hover:text-[#F7AB0A]/80 w-fit mx-auto'>
                 <span className='underline decoration=[#F7AB0A]/50'>
                   Project {i + 1} of {projects.length}:
                 </span>{' '}
@@ -76,7 +76,7 @@ function Projects({projects}: Props) {
               </h4>
               </Link>
 
-              <p className='w-4/5 mx-auto' align="center">
+              <p className='w-4/5 mx-auto text-xs md:text-base' align="center">
                 {project?.summary}
               </p>
 
@@ -86,7 +86,7 @@ function Projects({projects}: Props) {
                     key={technology._id}
                     src={urlFor(technology.image).url()}
                     alt=''
-                    className='h-8 w-8 m-1 md:m-2 object-contain'
+                    className='h-6 w-6 md:h-8 md:w-8 m-1 md:m-2 object-contain rounded-full'
                   />
                 })}
               </div>
