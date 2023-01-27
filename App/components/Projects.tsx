@@ -76,7 +76,7 @@ function Projects({projects}: Props) {
               </h4>
               </Link>
 
-              <p className='w-4/5 mx-auto text-xs md:text-base' align="center">
+              <p className='w-4/5 mx-auto text-xs md:text-base' data-align="center">
                 {project?.summary}
               </p>
 
