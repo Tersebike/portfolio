@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Project } from '../typings';
 import { urlFor } from '../sanity';
+import Link from 'next/link';
 
 type Props = {
   projects: Project[];
@@ -24,6 +25,8 @@ function Projects({projects}: Props) {
     }
   })
 
+  console.log(projects);
+
   return (
     <div className='h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
       <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>Projects</h3>
@@ -43,33 +46,37 @@ function Projects({projects}: Props) {
               duration: 1.5,
             }}
             className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 pt-25 md:p-20 md:pt-45 h-screen'>
-            <motion.img
-              initial={{
-                y: -300,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 1.2,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              src={urlFor(project?.image).url()}
-              alt=''
-              className='h-36 mt-10'
-            />
+              <Link href={project.linkToBuild}>
+              <motion.img
+                initial={{
+                  y: -300,
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 1.2,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                src={urlFor(project?.image).url()}
+                alt=''
+                className='h-36 mt-10'
+              />
+              </Link>
 
             <div className='space-y-5 px-0 md:px-10 max-w-6xl justify-evenly items-center'>
-              <h4 className='text-2xl md:text-4xl font-semibold text-center'>
+              <Link href={project?.linkToBuild}>
+              <h4 className='text-2xl md:text-4xl font-semibold text-center hover:text-[#F7AB0A]/80 w-fit mx-auto'>
                 <span className='underline decoration=[#F7AB0A]/50'>
                   Project {i + 1} of {projects.length}:
                 </span>{' '}
                 {project?.title}
               </h4>
+              </Link>
 
               <p className='w-4/5 mx-auto' align="center">
                 {project?.summary}
