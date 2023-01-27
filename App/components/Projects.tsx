@@ -62,7 +62,7 @@ function Projects({projects}: Props) {
                 }}
                 src={urlFor(project?.image).url()}
                 alt=''
-                className='h-28 mt-20'
+                className='h-28'
               />
               </Link>
 
