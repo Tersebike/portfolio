@@ -11,7 +11,7 @@ function About({pageInfo}: Props) {
   return (
     <div className='flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-12 justify-evenly mx-auto items-center'>
 
-      <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
+      <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl mx-auto pl-[20px] items-center justify-evenly text-center'>
         About
       </h3>
 
@@ -29,7 +29,7 @@ function About({pageInfo}: Props) {
         }}
         src={urlFor(pageInfo?.profilePic).url()}
         alt=''
-        className='-mb-36 md:mb-0 flex-shrink-0 h-28 object-cover rounded-xl md:h-3/5 mt-[25px] md:mt-[75px]'
+        className='-mb-36 md:mb-0 flex-shrink-0 h-36 object-cover rounded-xl md:h-3/5 mt-[25px] md:mt-[75px]'
       />
       <motion.div
         initial={{
