@@ -16,9 +16,9 @@ type align = {
 
 function Projects({projects}: Props) {
   projects.sort((a, b) => {
-    if (a.title === 'Atelier') {
+    if (a.title === 'The CampSite') {
       return -1;
-    } else if (b.title === 'Atelier') {
+    } else if (b.title === 'The CampSite') {
       return 1;
     } else {
       return 0
@@ -76,7 +76,7 @@ function Projects({projects}: Props) {
               </h4>
               </Link>
 
-              <p className='w-4/5 mx-auto text-xs md:text-base' data-align="center">
+              <p className='w-4/5 mx-auto text-xs md:text-base text-center'>
                 {project?.summary}
               </p>
 
@@ -86,7 +86,7 @@ function Projects({projects}: Props) {
                     key={technology._id}
                     src={urlFor(technology.image).url()}
                     alt=''
-                    className='h-6 w-6 md:h-8 md:w-8 m-1 md:m-2 object-contain rounded-full'
+                    className='h-6 w-6 md:h-8 md:w-8 mx-auto my-1 md:m-2 object-contain rounded-full'
                   />
                 })}
               </div>
