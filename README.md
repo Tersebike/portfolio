@@ -3,7 +3,7 @@ This project is a portfolio website created to give a little bit of insight into
 
 ## Table of Contents
 - [Tech Stack](#tech-stack)
-- [Installation](#installation)
+- [Installation and Setup](#installation-and-setup)
 - [Setup](#setup)
   (optional)
 - [Deployment](#deployment)
@@ -11,81 +11,58 @@ This project is a portfolio website created to give a little bit of insight into
 
 ## Tech Stack
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Package](https://img.shields.io/hexpm/v/sanity.svg)
-![Express](https://img.shields.io/badge/-Express-DCDCDC?logo=express&logoColor=black&style=for-the-badge)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Sanity](https://img.shields.io/badge/S-Sanity-red)
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-## End Points
-* Get Reviews
-  * Given a product ID and optional page count information, this endpoint will return a list of reviews for the associated product.
-* Get Meta Data
-  * Given a product ID, this endpoint will return the associated reviews meta data for a particular product.
-* Post Reviews
-  * Given a body, name, email, product ID, summary, recommended boolean, and photos this endpoint will create a review and add it to the database.
-* Mark Review as Helpful
-  * This endpoint will increment the helpful value of a review, whose total can be viewed directly from the webpgage.
-* Report Review
-  * This will mark a review as reported. Reported reviews are not return by the get request.
-
-## Performance
-To allow for 1000 RPS, this API was deployed over 4 different instances: a load balancer instance, and three server and database handling instances. Below are key metric improvements compared to running the endpoints on a single instance. All utilize a throughput of 1000 RPS for 60 seconds.
-* Get Reviews
-  * 46% to 0% Error Rate
-  * 5263 ms to 3 ms Latency
-* Get Meta Data
-  * 44% to 0% Error Rate
-  * 3926 ms to 1 ms Latency
-* Post Reviews
-  * 39% to 0% Error Rate
-  * 3128 ms to 5 ms Latency
-* Mark Review as Helpful
-  * 25% to 0% Error Rate
-  * 2032 ms to 8 ms Latency
-* Report Review
-  * 32% to 0% Error Rate
-  * 2568 ms to 20 ms Latency
-
-## Installation Details
-
-### How to install and use PostgreSQL
-#### Installation
-* Utilizing Homebrew to install:
+#### Installation and Setup
+* Fork and clone github repo onto local machine
+* Firstly, install the sanity cli globally, run:
 ```bash
-brew install postgresql
+npm install -g @sanity/cli
 ```
-* Start postgresql service:
-```bash
-brew services start postegresql
-```
-* Stop:
-```bash
-brew services stop postgres
-```
-* Connect to postgresql: 
-```bash
-psql postgres
-```
-* Install dependencies in Repo:
+* cd into the sanity folder and run:
 ```bash
 npm install
 ```
-#### Utilization
-* Create a database:
+* Then, go back and cd into the App folder to do the same.
+* Then, create a .env file and copy the contents of env.example over
+* Go to sanity.io and create an account
+* Navigate back into the sanity folder
+* When you try to do anything through the sanity command line, it should have you login using the account you just created and attach the sanity project to one in your account, you'll have to create one to attach it to.
+* Still in the sanity folder run:
 ```bash
-CREATE DATABASE dbname;
+npm run dev
 ```
-* Connect to database
+* Then, visit https://localhost:3333/ to checkout your newly created Sanity studio.
+* Upload all the data you want!
+* Navigate back into the App folder and go into the .env file and change the project id to the project id of your corresponding project on sanity.io. And if you'd like you can put production for the dataset.
+* Then, run:
 ```bash
-\c dbname
+npm run dev
 ```
-* Read currrent database:
+* this will start your next.js server in dev mode and you'll see all the information you uploaded
+
+#### Deployment
+* First, install the vercel cli globally by running:
 ```bash
-SELECT current_database();
+npm i -g vercel
 ```
-* List all tables:
+* Then, go into you sanity folder and run the command:
 ```bash
-\dt
+npm run deploy
 ```
+* This will deploy your sanity project so that it no longer has to run from your local machine.
+* You can close out of any local sanity hosts, because it is now all deployed.
+* Navigate to your project on sanity.io and click on the sanity studio button. There is your studio all set up and deployed.
+* Now, you can either deploy through vercel by going to the website and walking through their tutorial online, or you can deploy through the command line. and walk through the deployment that way. I will show some command line for this one.
+* So, go into your App folder on your local repo and run:
+```bash
+vercel deploy
+```
+* This will pull up their command line deployment. You can also do this in the root directory, but you would just end up choosing the App folder as the location of the deployment anyways, so either works.
+* Then, walk through their tutorial selecting ./ for the root folder to deploy and adding the necessary environment variables and voila, It is deployed!
+* If you want now, you can connect a domain to the deployment through DNS or custom name servers, Vercel's website is extremely informative about those connections.
 
 ## Contributors
 <a href="https://github.com/Bornean-Orangutan/Ratings-and-Reviews-API/graphs/contributors">
