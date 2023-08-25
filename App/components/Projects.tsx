@@ -43,7 +43,7 @@ function Projects({projects}: Props) {
             transition={{
               duration: 1.5,
             }}
-            className='w-screen flex-shrink-0 snap-center flex flex-col space-y-2 items-center justify-center px-10 md:p-20 md:pt-45 h-screen'>
+            className='w-screen flex-shrink-0 snap-center flex flex-col space-y-2 items-center justify-center px-10 md:p-20 md:pt-40 h-screen'>
               <Link href={project.linkToBuild}>
               <motion.img
                 initial={{
@@ -62,7 +62,7 @@ function Projects({projects}: Props) {
                 }}
                 src={urlFor(project?.image).url()}
                 alt=''
-                className='h-28'
+                className='h-40'
               />
               </Link>
 
