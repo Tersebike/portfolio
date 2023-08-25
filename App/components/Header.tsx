@@ -53,7 +53,7 @@ export default function Header({ socials }: Props) {
       }}
       className='flex flex-row items-center text-gray-300 cursor-pointer'>
         <Link href="/resume">
-          <p className='uppercase inline-flex text-base text-gray-400'>Resume</p>
+          <p className='uppercase inline-flex text-base text-gray-400'>Resumé</p>
         </Link>
         <p className='inline-flex text-base text-gray-400 pb-1 h-[50px] w-[20px] font-bold align-center items-center justify-center'>|</p>
         <Link href="#contact">
