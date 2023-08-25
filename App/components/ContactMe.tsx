@@ -14,7 +14,8 @@ type Props = {}
 function ContactMe({}: Props) {
   const { register, handleSubmit, } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = formData => {
-    window.location.href = `mailto:williamstim146?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
+    // still need to insert the link to the resume on the main page
+    window.location.href = `mailto:williamstim146@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
   };
   return (
     <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
