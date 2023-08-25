@@ -52,14 +52,12 @@ export default function Header({ socials }: Props) {
         duration: 1.5,
       }}
       className='flex flex-row items-center text-gray-300 cursor-pointer'>
-        <SocialIcon
-          url='/#contact'
-          fgColor='gray'
-          bgColor='transparent'
-          network='email'
-        />
         <Link href="#contact">
-          <p className='uppercase hidden md:inline-flex text-sm text-gray-400 pb-1'>Get In Touch</p>
+          <p className='uppercase inline-flex text-base text-gray-400'>Resume</p>
+        </Link>
+        <p className='inline-flex text-base text-gray-400 pb-1 h-[50px] w-[20px] font-bold align-center items-center justify-center'>|</p>
+        <Link href="#contact">
+          <p className='uppercase inline-flex text-base text-gray-400'>Get In Touch</p>
         </Link>
       </motion.div>
     </header>

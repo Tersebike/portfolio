@@ -22,7 +22,7 @@ function ContactMe({}: Props) {
       <h3 className='absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl pl-[20px]'>Contact</h3>
       <div className='flex flex-col space-y-2 mb-10 md:mb-0 md:mt-16'>
         <h4 className='text-2xl font-semibold text-center'>
-          I have got just what you need.{' '}
+          I have just what you need.{' '}
           <span className='decoration-[#F7AB0A]/50 underline'>Lets Talk.</span>
         </h4>
 
@@ -51,7 +51,7 @@ function ContactMe({}: Props) {
 
           <input {...register('subject')} placeholder='Subject' type='text' className='contactInput h-10 md:h-18' />
 
-          <textarea {...register('message')} placeholder='Message' className='contactInput h-14 md:h-20' />
+          <textarea {...register('message')} placeholder='Message' className='contactInput h-18 md:h-20' />
           <button type='submit' className='bg-[#F7AB0A] py-auto h-8 md:h-14 px-10 rounded-md text-black font-bold text-lg'>Submit</button>
         </form>
       </div>
