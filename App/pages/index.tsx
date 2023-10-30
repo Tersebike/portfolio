@@ -65,16 +65,6 @@ export default function Home({ pageInfo, skills, projects, socials}: Props) {
       <ContactMe />
     </section>
 
-    <Link href='#hero'>
-      <footer className='sticky bottom-[15%] md:bottom-5 w-fill cursor-pointer mt-[1000px]'>
-        <div className='flex items-start md:items-end justify-start md:justify-end pr-[2.5%] pl-[1%]'>
-            <ArrowUpIcon
-              className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
-            />
-        </div>
-      </footer>
-    </Link>
-
     </div>
   )
 }
